@@ -5,13 +5,13 @@ import { FetchUserCheckInsHistoryUseCase } from './fetch-user-check-ins-history'
 let checkInsRepository: inMemoryCheckInsRepository
 let sut: FetchUserCheckInsHistoryUseCase
 
-describe('Featc Check-in History Use Case', () => {
+describe('Fetch Check-in History Use Case', () => {
   beforeEach(async () => {
     checkInsRepository = new inMemoryCheckInsRepository()
     sut = new FetchUserCheckInsHistoryUseCase(checkInsRepository)
   })
 
-  it('should be able to feach check-in history', async () => {
+  it('should be able to fetch check-in history', async () => {
     await checkInsRepository.create({
       gym_id: 'gym-01',
       user_id: 'user-01',
@@ -34,7 +34,7 @@ describe('Featc Check-in History Use Case', () => {
     ])
   })
 
-  it('should be able to feach paginated check-in history', async () => {
+  it('should be able to fetch paginated check-in history', async () => {
     for (let i = 1; i <= 22; i++) {
       await checkInsRepository.create({
         gym_id: `gym-${i}`,
